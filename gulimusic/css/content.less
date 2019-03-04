@@ -1,0 +1,162 @@
+@import "mixin/mixin";
+@import "font/font";
+@rem:1080/16rem;
+#wrap{
+    position: relative;
+    &>.content{
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 270/@rem;
+        // background: silver;
+        .nav{
+            .onePx(bottom,black);
+            box-sizing: border-box;
+            height: 177/@rem;
+            padding: 31/@rem 0 14/@rem 0;
+            background: #eee;
+            .list{
+                &:extend(.clearfix all);
+                padding: 0;
+                float: left;
+                white-space: nowrap; //规定段落中的文本不进行换行,只管理inline和inline-block,对block无效
+                li{
+                    display: inline-block;
+                    height: 129/@rem;
+                    line-height: 129/@rem;
+                    padding: 0 38/@rem;
+                    a{
+                        font-size: 66/@rem;
+                        color: black;
+                    }
+                    &.active{
+                        background: #690;
+                        a{
+                            color:#fff;
+                        }
+                    }
+                }
+            }
+        }
+        .tab-wrap{
+            width: 1046/@rem;
+            background: #fff;
+            margin: 0 auto;
+            overflow: hidden;
+            .tab-head{
+                &:extend(.clearfix all);
+                height: 135/@rem;
+                line-height: 135/@rem;
+                h2{
+                    font-size:66/@rem;
+                    float: left;
+                }
+                span{
+                    font-size:44/@rem;
+                    float: right;
+                    i{
+                        margin-left: 20/@rem;
+                    }
+                }
+            }
+            .tab-nav{
+                position: relative;
+                height: 105/@rem;
+                line-height: 105/@rem;
+                a{  
+                    float: left;
+                    height: 105/@rem;
+                    line-height: 105/@rem;
+                    margin-right: 15/@rem;
+                    font-size: 44/@rem;
+                    text-align: center;
+                    color: #6b6b6b;
+                }
+                .smallG{
+                    position: absolute;
+                    left: 0;
+                    bottom:10/@rem;
+                    width: 85/@rem;
+                    height: 9/@rem;
+                    background: #6f900d;
+                    transition: 1s transform,1s width;
+                }
+
+            }
+            .tab-content{
+                &:extend(.clearfix all);
+                width: 300%;
+                &>ul{
+                    width: 33.333333%;
+                    float: left;
+                &.list{
+                     &:extend(.clearfix all);
+                    li{
+                        box-sizing: border-box;
+                        float: left;
+                        width: 506/@rem;
+                        margin: 8/@rem;
+                        padding: 5/@rem;
+                        font-size: 40/@rem;
+                        background: #efefef;
+                        .top{
+                            a{
+                                overflow: hidden;
+                                white-space: nowrap;
+                                text-overflow: ellipsis;
+                                color: #000;
+                                img{
+                                    width: 100%;
+                                }
+                                span{
+                                    color: dimgray
+                                }
+                            }
+                        }
+                        .bottom{
+                            .play{
+                                float: left;
+                                margin-right: 30/@rem;
+                                i{
+                                    display: inline-block;
+                                    background: url("../img/ice.png") no-repeat;
+                                    background-position: 0 0;
+                                    width: 40/@rem;
+                                    height: 40/@rem;
+                                    vertical-align: middle;
+                                }
+                                span{
+                                    vertical-align: middle;
+                                }
+                            }
+                            .comment{
+                                float: left;
+                                i{
+                                    display: inline-block;
+                                    background: url("../img/ice.png") no-repeat;
+                                    background-position: 0 -55/@rem;
+                                    width: 40/@rem;
+                                    height: 40/@rem;
+                                    vertical-align: middle;
+                                }
+                                span{
+                                    vertical-align: middle;
+                                }
+                            }
+                        }
+                    }
+                }
+                &.loading{
+                    opacity: 0;
+                    height: 300/@rem;
+                    background: url("../img/loading.gif") no-repeat;
+                    background-position: center;
+                }
+                }
+               
+            }
+        }
+    }
+
+}
